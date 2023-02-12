@@ -1,7 +1,7 @@
 import React from 'react';
 
-const CountryCard = ({ countryData }) => {
-  return countryData.map(
+const CountryCard = ({ filteredCountries }) => {
+  return filteredCountries.map(
     ({ countryName, flagUrl, population, region, capital }) => (
       <div className='w-9/12 mb-10 rounded-md shadow-md h-96' key={countryName}>
         <img

@@ -1,4 +1,4 @@
-import React, { createContext } from 'react';
+import React, { createContext, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_URL_ALL } from 'utils/constants';
@@ -6,6 +6,7 @@ import { API_URL_ALL } from 'utils/constants';
 export const CountryContext = createContext();
 
 const CountryProvider = (props) => {
+  const [searchTerm, setSearchTerm] = useState('');
   const { isLoading, error, data } = useQuery({
     queryKey: ['countries'],
     queryFn: () => axios.get(API_URL_ALL).then((res) => res.data),
@@ -14,7 +15,6 @@ const CountryProvider = (props) => {
   if (isLoading) return 'Loading...';
 
   if (error) return 'An error has occurred: ' + error.message;
-
   const countryData = data.map((country) => {
     return {
       capital: country.capital,
@@ -25,10 +25,8 @@ const CountryProvider = (props) => {
     };
   });
 
-  console.log(countryData);
-
   return (
-    <CountryContext.Provider value={{ countryData }}>
+    <CountryContext.Provider value={{ countryData, searchTerm, setSearchTerm }}>
       {props.children}
     </CountryContext.Provider>
   );
