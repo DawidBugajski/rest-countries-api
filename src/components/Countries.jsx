@@ -1,31 +1,9 @@
-import React from 'react';
-import { useQuery } from '@tanstack/react-query';
-import axios from 'axios';
-import { API_URL_ALL } from 'utils/constants';
+import React, { useContext } from 'react';
 import CountryCard from 'components/CountryCard';
+import { CountryContext } from 'components/CountryProvider';
 
 const Countries = () => {
-  const { isLoading, error, data } = useQuery({
-    queryKey: ['countries'],
-    queryFn: () => axios.get(API_URL_ALL).then((res) => res.data),
-  });
-
-  if (isLoading) return 'Loading...';
-
-  if (error) return 'An error has occurred: ' + error.message;
-
-  console.log(data);
-
-  const countryData = data.map((country) => {
-    return {
-      capital: country.capital,
-      population: country.population,
-      countryName: country.name.common,
-      region: country.region,
-      flagUrl: country.flags.png,
-    };
-  });
-
+  const { countryData } = useContext(CountryContext);
   return (
     <div className='flex flex-wrap justify-center'>
       <CountryCard countryData={countryData} />
