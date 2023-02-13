@@ -2,15 +2,17 @@ import React from 'react';
 import Countries from 'components/Countries';
 import Header from 'components/Header';
 import SearchBar from 'components/SearchBar';
-import Filter from 'components/Filter';
+import RegionFilterDropdown from 'components/RegionFilterDropdown';
 import CountryProvider from 'components/CountryProvider';
 
 const App = () => {
   return (
     <CountryProvider>
       <Header />
-      <SearchBar />
-      <Filter />
+      <div className=' lg:flex lg:justify-between'>
+        <SearchBar />
+        <RegionFilterDropdown />
+      </div>
       <Countries />
     </CountryProvider>
   );

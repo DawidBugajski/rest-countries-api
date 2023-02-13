@@ -7,6 +7,7 @@ export const CountryContext = createContext();
 
 const CountryProvider = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
+  const [selectedRegion, setSelectedRegion] = useState('Filter by region');
   const { isLoading, error, data } = useQuery({
     queryKey: ['countries'],
     queryFn: () => axios.get(API_URL_ALL).then((res) => res.data),
@@ -26,7 +27,15 @@ const CountryProvider = (props) => {
   });
 
   return (
-    <CountryContext.Provider value={{ countryData, searchTerm, setSearchTerm }}>
+    <CountryContext.Provider
+      value={{
+        countryData,
+        searchTerm,
+        setSearchTerm,
+        selectedRegion,
+        setSelectedRegion,
+      }}
+    >
       {props.children}
     </CountryContext.Provider>
   );

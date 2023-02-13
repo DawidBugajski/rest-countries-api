@@ -1,9 +1,12 @@
 import React from 'react';
 
-const CountryCard = ({ filteredCountries }) => {
-  return filteredCountries.map(
+const CountryCard = ({ searchFilteredCountries }) => {
+  return searchFilteredCountries.map(
     ({ countryName, flagUrl, population, region, capital }) => (
-      <div className='w-9/12 mb-10 rounded-md shadow-md h-96' key={countryName}>
+      <div
+        className='w-9/12 mb-10 rounded-md shadow-md h-96 sm:w-5/12 sm:mx-6 md:w-[29%] md:mx-2 lg:w-44 lg:mx-5'
+        key={countryName}
+      >
         <img
           className='w-full rounded-t-md h-1/2 border-b-[1px] border-t-[1px] border-gray-200'
           alt={countryName}

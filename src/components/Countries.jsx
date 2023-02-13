@@ -3,24 +3,29 @@ import CountryCard from 'components/CountryCard';
 import { CountryContext } from 'components/CountryProvider';
 
 const Countries = () => {
-  const { countryData, searchTerm } = useContext(CountryContext);
-  const [filteredCountries, setFilteredCountries] = useState(countryData);
+  const { countryData, searchTerm, selectedRegion } =
+    useContext(CountryContext);
+  const [searchFilteredCountries, setSearchFilteredCountries] =
+    useState(countryData);
 
+  // filter by search input and dropdown
   useEffect(() => {
-    setFilteredCountries(
-      countryData.filter(({ countryName }) =>
-        countryName.toLowerCase().includes(searchTerm.toLowerCase())
+    setSearchFilteredCountries(
+      countryData.filter(
+        ({ countryName, region }) =>
+          countryName.toLowerCase().includes(searchTerm.toLowerCase()) &&
+          (selectedRegion === 'Filter by region' || region === selectedRegion)
       )
     );
-  }, [searchTerm, countryData]);
+  }, [selectedRegion, searchTerm, countryData]);
 
   return (
     <div className='flex flex-wrap justify-center'>
-      <CountryCard filteredCountries={filteredCountries} />
+      <CountryCard searchFilteredCountries={searchFilteredCountries} />
     </div>
   );
 };
 
 export default Countries;
 
-// jeśli nic nie będzie pasowało to może wygeneruj jakąś informację?
+// if nothing matches then maybe generate some information?
