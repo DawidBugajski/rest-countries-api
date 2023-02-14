@@ -5,11 +5,11 @@ import FormControl from '@mui/material/FormControl';
 import Select from '@mui/material/Select';
 
 const RegionFilterDropdown = () => {
-  const { countryData, selectedRegion, setSelectedRegion } =
+  const { countryDataMain, selectedRegion, setSelectedRegion } =
     useContext(CountryContext);
 
   // all regions based on the API
-  const regions = [...new Set(countryData.map(({ region }) => region))];
+  const regions = [...new Set(countryDataMain.map(({ region }) => region))];
 
   const renderRegions = ['Filter by region', ...regions].map((region) => (
     <MenuItem style={{ fontFamily: 'Nunito Sans' }} key={region} value={region}>
@@ -20,7 +20,7 @@ const RegionFilterDropdown = () => {
   const handleChange = (e) => setSelectedRegion(e.target.value);
 
   return (
-    <div className='w-11/12 mx-auto mb-10 lg:m-0 lg:w-[200px]'>
+    <div className='flex w-11/12 mx-auto mb-10 lg:justify-end lg:m-0 lg:w-1/3'>
       <FormControl
         sx={{
           width: '50%',

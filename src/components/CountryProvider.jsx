@@ -1,7 +1,7 @@
 import React, { createContext, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
-import { API_URL_ALL } from 'utils/constants';
+import { API_URL_ALL, API_URL_COUNTRY } from 'utils/constants';
 
 export const CountryContext = createContext();
 
@@ -16,7 +16,7 @@ const CountryProvider = (props) => {
   if (isLoading) return 'Loading...';
 
   if (error) return 'An error has occurred: ' + error.message;
-  const countryData = data.map((country) => {
+  const countryDataMain = data.map((country) => {
     return {
       capital: country.capital,
       population: country.population,
@@ -29,7 +29,7 @@ const CountryProvider = (props) => {
   return (
     <CountryContext.Provider
       value={{
-        countryData,
+        countryDataMain,
         searchTerm,
         setSearchTerm,
         selectedRegion,

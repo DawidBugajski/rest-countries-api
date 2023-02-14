@@ -3,21 +3,23 @@ import CountryCard from 'components/CountryCard';
 import { CountryContext } from 'components/CountryProvider';
 
 const Countries = () => {
-  const { countryData, searchTerm, selectedRegion } =
+  const { countryDataMain, searchTerm, selectedRegion } =
     useContext(CountryContext);
   const [searchFilteredCountries, setSearchFilteredCountries] =
-    useState(countryData);
+    useState(countryDataMain);
 
-  // filter by search input and dropdown
+  // filter by search input and dropdown && sort largest population
   useEffect(() => {
     setSearchFilteredCountries(
-      countryData.filter(
-        ({ countryName, region }) =>
-          countryName.toLowerCase().includes(searchTerm.toLowerCase()) &&
-          (selectedRegion === 'Filter by region' || region === selectedRegion)
-      )
+      countryDataMain
+        .filter(
+          ({ countryName, region }) =>
+            countryName.toLowerCase().includes(searchTerm.toLowerCase()) &&
+            (selectedRegion === 'Filter by region' || region === selectedRegion)
+        )
+        .sort((a, b) => b.population - a.population)
     );
-  }, [selectedRegion, searchTerm, countryData]);
+  }, [selectedRegion, searchTerm, countryDataMain]);
 
   return (
     <div className='flex flex-wrap justify-center'>
