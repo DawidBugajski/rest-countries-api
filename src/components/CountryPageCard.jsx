@@ -43,9 +43,13 @@ const CountryPageCard = () => {
   const languageList = Object.values(languages).join(', ');
 
   return (
-    <div>
+    <div className='w-9/12 mx-auto mb-10 rounded-md shadow-md'>
       <h2>{common}</h2>
-      <img src={flagUrl} alt={common} />
+      <img
+        className='w-full rounded-t-md h-1/2 border-b-[1px] border-t-[1px] border-gray-200'
+        src={flagUrl}
+        alt={common}
+      />
       <p>Native Name: {firstNativeName}</p>
       <p>Population: {population.toLocaleString()}</p>
       <p>Region: {region}</p>

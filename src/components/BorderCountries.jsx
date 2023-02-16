@@ -2,9 +2,9 @@ import React from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { API_URL_ALPHA } from 'utils/constants';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 const BorderCountries = ({ borders }) => {
-  console.log(borders);
   const {
     data: borderData,
     isLoading: isBorderLoading,
@@ -31,10 +31,16 @@ const BorderCountries = ({ borders }) => {
     } = border[0];
 
     return (
-      <div className='flex' key={borderCountry}>
-        <p>{borderCountry}</p>
-        <img className='w-5 h-5' src={borderCountryFlag} alt={borderCountry} />
-      </div>
+      <Link to={`/name/${borderCountry}`}>
+        <div className='flex' key={borderCountry}>
+          <p>{borderCountry}</p>
+          <img
+            className='w-5 h-5'
+            src={borderCountryFlag}
+            alt={borderCountry}
+          />
+        </div>
+      </Link>
     );
   });
 

@@ -1,16 +1,1 @@
-- See all countries from the API on the homepage 
-Country name - name common (object)
-Population - population (number)
-Region - region (string)
-Capital - capital (Array)
-Flag - svg (object)
-
-- Search for a country using an input field
-- Filter countries by region
-- Click on a country to see more detailed information on a separate page
-- Click through to the border countries on the detail page
-- Toggle the color scheme between light and dark mode (optional)
-
-
-Jak mam zrobić żeby po kliknięciu w jebane panstwo wyskoczył mi inny komponent
-Jak mam podpiąć to potem pod API 
+- after clicking on country page link to country by useRef link 
