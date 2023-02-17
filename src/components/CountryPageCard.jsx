@@ -43,21 +43,40 @@ const CountryPageCard = () => {
   const languageList = Object.values(languages).join(', ');
 
   return (
-    <div className='w-9/12 mx-auto mb-10 rounded-md shadow-md'>
-      <h2>{common}</h2>
+    <div className='mx-auto my-6'>
       <img
-        className='w-full rounded-t-md h-1/2 border-b-[1px] border-t-[1px] border-gray-200'
+        className='border-gray-200 border-[1px] h-full mb-8'
         src={flagUrl}
         alt={common}
       />
-      <p>Native Name: {firstNativeName}</p>
-      <p>Population: {population.toLocaleString()}</p>
-      <p>Region: {region}</p>
-      <p>Subregion: {subregion}</p>
-      <p>Capital: {capital}</p>
-      <p>Top Level Domain: {tld[0]}</p>
-      <p>Currencies: {currencyNames}</p>
-      <p>Languages: {languageList}</p>
+      <h2 className='my-2 text-2xl font-extrabold'>{common}</h2>
+      <div className='leading-relaxed'>
+        <p className='font-semibold'>
+          Native Name: <span className='font-normal'>{firstNativeName}</span>
+        </p>
+        <p className='font-semibold'>
+          Population:{' '}
+          <span className='font-normal'>{population.toLocaleString()}</span>
+        </p>
+        <p className='font-semibold'>
+          Region: <span className='font-normal'>{region}</span>
+        </p>
+        <p className='font-semibold'>
+          Subregion: <span className='font-normal'>{subregion}</span>
+        </p>
+        <p className='mb-2 font-semibold'>
+          Capital: <span className='font-normal'>{capital}</span>
+        </p>
+        <p className='font-semibold'>
+          Top Level Domain: <span className='font-normal'>{tld[0]}</span>
+        </p>
+        <p className='font-semibold'>
+          Currencies: <span className='font-normal'>{currencyNames}</span>
+        </p>
+        <p className='mb-2 font-semibold'>
+          Languages: <span className='font-normal'>{languageList}</span>
+        </p>
+      </div>
       <BorderCountries borders={countryData[0]?.borders} />
     </div>
   );

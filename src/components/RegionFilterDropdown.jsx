@@ -23,7 +23,7 @@ const RegionFilterDropdown = () => {
     <div className='flex w-11/12 mx-auto mb-10 lg:justify-end lg:m-0 lg:w-1/3'>
       <FormControl
         sx={{
-          width: '50%',
+          width: '55%',
           '& .MuiInputBase-root': {
             fontFamily: 'Nunito Sans',
           },

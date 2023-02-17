@@ -31,20 +31,24 @@ const BorderCountries = ({ borders }) => {
     } = border[0];
 
     return (
-      <Link to={`/name/${borderCountry}`}>
-        <div className='flex' key={borderCountry}>
-          <p>{borderCountry}</p>
+      <div className='m-0.5' key={borderCountry}>
+        <Link to={`/name/${borderCountry}`}>
           <img
-            className='w-5 h-5'
+            className='w-16 h-10 border-[1px]'
             src={borderCountryFlag}
             alt={borderCountry}
           />
-        </div>
-      </Link>
+        </Link>
+      </div>
     );
   });
 
-  return <div className='flex flex-wrap'>Borders:&nbsp;{borderCountries}</div>;
+  return (
+    <>
+      <p className='font-semibold '>Border Countries:&nbsp;</p>
+      <div className='flex flex-wrap'>{borderCountries}</div>
+    </>
+  );
 };
 
 export default BorderCountries;
