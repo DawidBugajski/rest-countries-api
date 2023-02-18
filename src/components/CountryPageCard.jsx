@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_URL_COUNTRY } from 'utils/constants';
 import BorderCountries from 'components/BorderCountries';
+import SkeletonCardPage from 'components/SkeletonCardPage';
 
 const CountryPageCard = () => {
   const { name } = useParams();
@@ -18,7 +19,7 @@ const CountryPageCard = () => {
         .then((res) => res.data),
   });
 
-  if (isCountryLoading) return 'Loading...';
+  if (isCountryLoading) return <SkeletonCardPage />;
 
   if (countryError) return 'An error has occurred: ' + countryError.message;
 
@@ -43,41 +44,60 @@ const CountryPageCard = () => {
   const languageList = Object.values(languages).join(', ');
 
   return (
-    <div className='mx-auto my-6'>
-      <img
-        className='border-gray-200 border-[1px] h-full mb-8'
-        src={flagUrl}
-        alt={common}
-      />
-      <h2 className='my-2 text-2xl font-extrabold'>{common}</h2>
-      <div className='leading-relaxed'>
-        <p className='font-semibold'>
-          Native Name: <span className='font-normal'>{firstNativeName}</span>
-        </p>
-        <p className='font-semibold'>
-          Population:{' '}
-          <span className='font-normal'>{population.toLocaleString()}</span>
-        </p>
-        <p className='font-semibold'>
-          Region: <span className='font-normal'>{region}</span>
-        </p>
-        <p className='font-semibold'>
-          Subregion: <span className='font-normal'>{subregion}</span>
-        </p>
-        <p className='mb-2 font-semibold'>
-          Capital: <span className='font-normal'>{capital}</span>
-        </p>
-        <p className='font-semibold'>
-          Top Level Domain: <span className='font-normal'>{tld[0]}</span>
-        </p>
-        <p className='font-semibold'>
-          Currencies: <span className='font-normal'>{currencyNames}</span>
-        </p>
-        <p className='mb-2 font-semibold'>
-          Languages: <span className='font-normal'>{languageList}</span>
-        </p>
-      </div>
-      <BorderCountries borders={countryData[0]?.borders} />
+    <div>
+      <>
+        <div className='mx-auto my-6 lg:items-center lg:flex 2xl:my-0'>
+          <img
+            className='border-gray-200 border-[1px] mb-8 lg:h-72 lg:mr-16 xl:mb-0 xl:h-[350px] shadow-xl '
+            src={flagUrl}
+            alt={common}
+          />
+          <div className='flex flex-col flex-grow'>
+            <h2 className='my-2 text-2xl font-extrabold lg:m-0 2xl:text-4xl'>
+              {common}
+            </h2>
+            <div className='leading-relaxed 2xl:flex 2xl:py-8'>
+              <div className='flex-grow'>
+                <p className='font-semibold 2xl:text-xl'>
+                  Native Name:{' '}
+                  <span className='font-normal'>{firstNativeName}</span>
+                </p>
+                <p className='font-semibold 2xl:text-xl'>
+                  Population:{' '}
+                  <span className='font-normal'>
+                    {population.toLocaleString()}
+                  </span>
+                </p>
+                <p className='font-semibold 2xl:text-xl'>
+                  Region: <span className='font-normal'>{region}</span>
+                </p>
+                <p className='font-semibold 2xl:text-xl'>
+                  Subregion: <span className='font-normal'>{subregion}</span>
+                </p>
+                <p className='mb-2 font-semibold 2xl:text-xl'>
+                  Capital: <span className='font-normal'>{capital}</span>
+                </p>
+              </div>
+              <div className='flex-grow'>
+                <p className='font-semibold 2xl:text-xl'>
+                  Top Level Domain:{' '}
+                  <span className='font-normal'>{tld[0]}</span>
+                </p>
+                <p className='font-semibold 2xl:text-xl'>
+                  Currencies:{' '}
+                  <span className='font-normal'>{currencyNames}</span>
+                </p>
+                <p className='mb-2 font-semibold 2xl:text-xl'>
+                  Languages: <span className='font-normal'>{languageList}</span>
+                </p>
+              </div>
+            </div>
+            {countryData[0].borders && (
+              <BorderCountries borders={countryData[0]?.borders} />
+            )}
+          </div>
+        </div>
+      </>
     </div>
   );
 };

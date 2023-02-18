@@ -21,7 +21,7 @@ const BorderCountries = ({ borders }) => {
       return Promise.all(promises);
     },
   });
-  if (isBorderLoading) return 'Loading...';
+  if (isBorderLoading) return 'loading...';
   if (borderError) return 'An error has occurred: ' + borderError.message;
 
   const borderCountries = borderData.map((border) => {
@@ -31,10 +31,10 @@ const BorderCountries = ({ borders }) => {
     } = border[0];
 
     return (
-      <div className='m-0.5' key={borderCountry}>
+      <div className='m-0.5 2xl:m-1' key={borderCountry}>
         <Link to={`/name/${borderCountry}`}>
           <img
-            className='w-16 h-10 border-[1px]'
+            className='w-16 h-10 border-[1px] sm:w-24 sm:h-14 2xl:w-32 2xl:h-24 shadow-xl'
             src={borderCountryFlag}
             alt={borderCountry}
           />
@@ -45,7 +45,7 @@ const BorderCountries = ({ borders }) => {
 
   return (
     <>
-      <p className='font-semibold '>Border Countries:&nbsp;</p>
+      <p className='font-semibold 2xl:text-xl'>Border Countries:&nbsp;</p>
       <div className='flex flex-wrap'>{borderCountries}</div>
     </>
   );

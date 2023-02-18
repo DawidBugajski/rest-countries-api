@@ -29,5 +29,3 @@ const Countries = () => {
 };
 
 export default Countries;
-
-// if nothing matches then maybe generate some information?

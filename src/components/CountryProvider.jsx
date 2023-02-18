@@ -10,27 +10,28 @@ const CountryProvider = (props) => {
   const [selectedRegion, setSelectedRegion] = useState('Filter by region');
   const { isLoading, error, data } = useQuery({
     queryKey: ['countries'],
-    queryFn: () => axios.get(API_URL_ALL).then((res) => res.data),
+    queryFn: () =>
+      axios.get(API_URL_ALL).then((res) =>
+        res.data
+          .map((country) => ({
+            capital: country.capital,
+            population: country.population,
+            countryName: country.name.common,
+            region: country.region,
+            flagUrl: country.flags.png,
+          }))
+          .sort((a, b) => b.population - a.population)
+      ),
   });
 
-  if (isLoading) return 'Loading...';
+  if (isLoading) return 'HEJ ŁADUJE SIE XD';
 
   if (error) return 'An error has occurred: ' + error.message;
-
-  const countryDataMain = data.map((country) => {
-    return {
-      capital: country.capital,
-      population: country.population,
-      countryName: country.name.common,
-      region: country.region,
-      flagUrl: country.flags.png,
-    };
-  });
 
   return (
     <CountryContext.Provider
       value={{
-        countryDataMain,
+        countryDataMain: data,
         searchTerm,
         setSearchTerm,
         selectedRegion,
