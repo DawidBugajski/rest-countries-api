@@ -3,6 +3,7 @@ import { useQuery } from '@tanstack/react-query';
 import { API_URL_ALPHA } from 'utils/constants';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import SpinnerBorderCountries from 'components/SpinnerBorderCountries';
 
 const BorderCountries = ({ borders }) => {
   const {
@@ -21,7 +22,7 @@ const BorderCountries = ({ borders }) => {
       return Promise.all(promises);
     },
   });
-  if (isBorderLoading) return 'loading...';
+  if (isBorderLoading) return <SpinnerBorderCountries />;
   if (borderError) return 'An error has occurred: ' + borderError.message;
 
   const borderCountries = borderData.map((border) => {
