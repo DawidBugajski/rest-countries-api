@@ -1,5 +1,2 @@
-- skeleton loading, error handling  https://www.npmjs.com/package/react-loading-skeleton
-- 404 page 
-
-
-1 skeleton tam gdzie jest loading byczku czyli duży kwadrat z lewej i taki z prawej na 10
+- add component when nothing matches with searchBar
+- DARK MODE

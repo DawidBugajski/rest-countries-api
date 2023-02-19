@@ -2,6 +2,8 @@ import React, { createContext, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_URL_ALL } from 'utils/constants';
+import SpinnerBorderCountries from 'components/SpinnerBorderCountries';
+import Error from 'components/Error';
 
 export const CountryContext = createContext();
 
@@ -24,9 +26,14 @@ const CountryProvider = (props) => {
       ),
   });
 
-  if (isLoading) return 'HEJ ŁADUJE SIE XD';
+  if (isLoading)
+    return (
+      <div className='flex items-center justify-center h-screen'>
+        <SpinnerBorderCountries />
+      </div>
+    );
 
-  if (error) return 'An error has occurred: ' + error.message;
+  if (error) return <Error errorMessage={error.message} />;
 
   return (
     <CountryContext.Provider

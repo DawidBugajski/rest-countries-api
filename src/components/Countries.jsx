@@ -1,7 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import CountryCard from 'components/CountryCard';
 import { CountryContext } from 'components/CountryProvider';
-
+import NoResultsFound from './NoResultsFound';
 const Countries = () => {
   const { countryDataMain, searchTerm, selectedRegion } =
     useContext(CountryContext);
@@ -23,7 +23,11 @@ const Countries = () => {
 
   return (
     <div className='flex flex-wrap justify-center'>
-      <CountryCard searchFilteredCountries={searchFilteredCountries} />
+      {searchFilteredCountries.length === 0 ? (
+        <NoResultsFound />
+      ) : (
+        <CountryCard searchFilteredCountries={searchFilteredCountries} />
+      )}
     </div>
   );
 };
