@@ -4,6 +4,7 @@ import axios from 'axios';
 import { API_URL_COUNTRY } from 'utils/constants';
 import BorderCountries from 'components/BorderCountries';
 import SkeletonCardPage from 'components/SkeletonCardPage';
+import Error from 'components/Error';
 
 const CountryPageCard = () => {
   const { name } = useParams();
@@ -21,7 +22,7 @@ const CountryPageCard = () => {
 
   if (isCountryLoading) return <SkeletonCardPage />;
 
-  if (countryError) return 'An error has occurred: ' + countryError.message;
+  if (countryError) return <Error errorMessage={countryError.message} />;
 
   const {
     capital,

@@ -4,6 +4,7 @@ import { API_URL_ALPHA } from 'utils/constants';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
 import SpinnerBorderCountries from 'components/SpinnerBorderCountries';
+import Error from 'components/Error';
 
 const BorderCountries = ({ borders }) => {
   const {
@@ -23,7 +24,7 @@ const BorderCountries = ({ borders }) => {
     },
   });
   if (isBorderLoading) return <SpinnerBorderCountries />;
-  if (borderError) return 'An error has occurred: ' + borderError.message;
+  if (borderError) return <Error errorMessage={borderError.message} />;
 
   const borderCountries = borderData.map((border) => {
     const {
