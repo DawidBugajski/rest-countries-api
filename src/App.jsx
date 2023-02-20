@@ -8,14 +8,16 @@ import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
-    <CountryProvider>
-      <Header />
-      <Routes>
-        <Route path='/' element={<HomePage />} />
-        <Route path='/name/:name' element={<CountryPage />} />
-        <Route path='*' element={<Error404 />} />
-      </Routes>
-    </CountryProvider>
+    <div className='h-screen dark:bg-DM_VeryDarkBlue'>
+      <CountryProvider>
+        <Header />
+        <Routes>
+          <Route path='/' element={<HomePage />} />
+          <Route path='/name/:name' element={<CountryPage />} />
+          <Route path='*' element={<Error404 />} />
+        </Routes>
+      </CountryProvider>
+    </div>
   );
 };
 

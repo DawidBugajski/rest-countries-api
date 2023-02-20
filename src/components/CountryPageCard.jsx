@@ -45,9 +45,9 @@ const CountryPageCard = () => {
   const languageList = Object.values(languages).join(', ');
 
   return (
-    <div className='mx-auto my-6 lg:items-center lg:flex 2xl:my-0'>
+    <div className='mx-auto my-6 lg:items-center lg:flex 2xl:my-0 dark:text-white'>
       <img
-        className='border-gray-200 border-[1px] mb-8 lg:h-72 lg:mr-16 xl:mb-0 xl:h-[350px] shadow-xl '
+        className='border-gray-200 border-[1px] mb-8 lg:h-72 lg:mr-16 xl:mb-0 xl:h-[350px] shadow-xl dark:border-DM_DarkBlue dark:shadow-LM_VeryDarkBlue'
         src={flagUrl}
         alt={common}
       />

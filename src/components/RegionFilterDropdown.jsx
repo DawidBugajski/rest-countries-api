@@ -20,7 +20,7 @@ const RegionFilterDropdown = () => {
   const handleChange = (e) => setSelectedRegion(e.target.value);
 
   return (
-    <div className='flex w-11/12 mx-auto mb-10 lg:justify-end lg:m-0 lg:w-1/3'>
+    <div className='flex w-11/12 mx-auto mb-10 lg:justify-end lg:m-0 lg:w-1/3 '>
       <FormControl
         sx={{
           width: '55%',
@@ -34,6 +34,7 @@ const RegionFilterDropdown = () => {
           id='region-filter-select'
           value={selectedRegion}
           onChange={handleChange}
+          className='dark:text-white'
         >
           {renderRegions}
         </Select>

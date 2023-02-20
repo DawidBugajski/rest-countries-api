@@ -6,3 +6,30 @@
 body {
   font-family: 'Nunito Sans', sans-serif;
 }
+
+.dark input::placeholder,
+.dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
+.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+  color: #fff;
+}
+
+.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+  border: solid 1px hsl(209, 23%, 22%);
+}
+
+.dark .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input,
+.dark .css-6hp17o-MuiList-root-MuiMenu-list {
+  background-color: hsl(209, 23%, 22%);
+  color: #fff;
+}
+.dark .css-6hp17o-MuiList-root-MuiMenu-list li:hover,
+.dark .css-6hp17o-MuiList-root-MuiMenu-list li:focus,
+.dark .css-6hp17o-MuiList-root-MuiMenu-list li:active {
+  background-color: hsl(207, 26%, 17%);
+}
+
+.dark
+  .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused
+  .MuiOutlinedInput-notchedOutline {
+  border-color: hsl(0, 0%, 52%);
+}

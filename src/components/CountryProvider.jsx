@@ -1,4 +1,4 @@
-import React, { createContext, useState } from 'react';
+import React, { createContext, useEffect, useState } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import axios from 'axios';
 import { API_URL_ALL } from 'utils/constants';
@@ -10,6 +10,14 @@ export const CountryContext = createContext();
 const CountryProvider = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('Filter by region');
+  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode'));
+
+  useEffect(() => {
+    darkMode
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark');
+  }, [darkMode]);
+
   const { isLoading, error, data } = useQuery({
     queryKey: ['countries'],
     queryFn: () =>
@@ -43,6 +51,8 @@ const CountryProvider = (props) => {
         setSearchTerm,
         selectedRegion,
         setSelectedRegion,
+        darkMode,
+        setDarkMode,
       }}
     >
       {props.children}
