@@ -38,7 +38,7 @@ I also added several features by myself:
 
 ### Screenshot
 
-![](images/page.png)
+![](/images/page.png)
 
 ### Links
 
