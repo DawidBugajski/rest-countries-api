@@ -11,7 +11,7 @@ const ButtonPrev = () => {
       <Link
         onClick={handleResetSearchTerm}
         className='flex items-center justify-center '
-        to={'/'}
+        to={'/rest-countries-api'}
       >
         <BsArrowLeft className='mx-2' />
         Back
