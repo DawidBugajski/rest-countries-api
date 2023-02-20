@@ -8,7 +8,7 @@ import { Route, Routes } from 'react-router-dom';
 
 const App = () => {
   return (
-    <div className='h-screen dark:bg-DM_VeryDarkBlue'>
+    <div className='min-h-full dark:bg-DM_VeryDarkBlue'>
       <CountryProvider>
         <Header />
         <Routes>
