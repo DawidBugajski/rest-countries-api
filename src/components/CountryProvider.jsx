@@ -10,7 +10,10 @@ export const CountryContext = createContext();
 const CountryProvider = (props) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedRegion, setSelectedRegion] = useState('Filter by region');
-  const [darkMode, setDarkMode] = useState(localStorage.getItem('darkMode'));
+  const [darkMode, setDarkMode] = useState(() => {
+    const localData = localStorage.getItem('darkMode');
+    return localData ? JSON.parse(localData) : true;
+  });
 
   useEffect(() => {
     darkMode

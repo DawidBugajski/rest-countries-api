@@ -12,7 +12,7 @@ const App = () => {
       <CountryProvider>
         <Header />
         <Routes>
-          <Route path='/rest-countries-api' element={<HomePage />} />
+          <Route path='/' element={<HomePage />} />
           <Route path='/name/:name' element={<CountryPage />} />
           <Route path='*' element={<Error404 />} />
         </Routes>

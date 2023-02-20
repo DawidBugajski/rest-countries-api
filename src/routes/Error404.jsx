@@ -11,7 +11,7 @@ const Error404 = () => {
       />
       <h1 className='my-4 text-3xl 2xl:text-5xl'>Oops!</h1>
       <p>Sorry, an unexpected error has occurred.</p>
-      <Link to='/rest-countries-api'>
+      <Link to='/'>
         <p className='font-semibold text-blue-900 hover:text-purple-600 dark:text-blue-500 dark:hover:text-purple-400'>
           Back to the main page
         </p>

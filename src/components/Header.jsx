@@ -23,5 +23,3 @@ const Header = () => {
 };
 
 export default Header;
-
-//hover:fill-black dark:hover:stroke-black
