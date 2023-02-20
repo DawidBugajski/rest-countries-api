@@ -10,7 +10,8 @@ body {
 .dark input::placeholder,
 .dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
 .dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon,
-.dark .css-1636szt {
+.dark .css-1636szt,
+.dark .css-1yhq19e {
   color: #fff;
 }
 
@@ -22,14 +23,17 @@ body {
 
 .dark .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input,
 .dark .css-6hp17o-MuiList-root-MuiMenu-list,
-.dark .css-r8u8y9 {
+.dark .css-r8u8y9,
+.dark .css-3pfupk {
   background-color: hsl(209, 23%, 22%);
   color: #fff;
 }
 .dark .css-6hp17o-MuiList-root-MuiMenu-list li:hover,
 .dark .css-6hp17o-MuiList-root-MuiMenu-list li:focus,
 .dark .css-6hp17o-MuiList-root-MuiMenu-list li:active,
-.dark .css-1km1ehz.Mui-selected {
+.dark .css-1km1ehz.Mui-selected:hover,
+.dark .css-1km1ehz.Mui-selected:focus,
+.dark .css-1km1ehz.Mui-selected:active {
   background-color: hsl(207, 26%, 17%);
 }
 
