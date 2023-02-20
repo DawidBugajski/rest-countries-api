@@ -7,6 +7,10 @@ body {
   font-family: 'Nunito Sans', sans-serif;
 }
 
+.dark body {
+  background-color: hsl(207, 26%, 17%);
+}
+
 .dark input::placeholder,
 .dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
 .dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon,
