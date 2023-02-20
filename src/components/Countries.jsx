@@ -22,7 +22,7 @@ const Countries = () => {
   }, [selectedRegion, searchTerm, countryDataMain]);
 
   return (
-    <div className='flex flex-wrap justify-center dark:bg-DM_VeryDarkBlue'>
+    <div className='flex flex-wrap justify-center dark:bg-DM_VeryDarkBlue '>
       {searchFilteredCountries.length === 0 ? (
         <NoResultsFound />
       ) : (

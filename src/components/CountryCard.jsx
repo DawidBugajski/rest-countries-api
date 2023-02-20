@@ -5,7 +5,7 @@ const CountryCard = ({ searchFilteredCountries }) => {
   return searchFilteredCountries.map(
     ({ countryName, flagUrl, population, region, capital }) => (
       <div
-        className='w-9/12 mb-10 rounded-md shadow-md h-96 sm:w-5/12 sm:mx-6 md:w-[29%] md:mx-2 lg:w-[29%] lg:mx-5 xl:w-[21%] 2xl:w-[20%] 2xl:mx-9 min-[1800px]:w-[16%] dark:text-white  dark:bg-DM_DarkBlue'
+        className='w-9/12 mb-10 rounded-md shadow-md h-96 sm:w-5/12 sm:mx-6 md:w-[29%] md:mx-2 lg:w-[29%] lg:mx-5 xl:w-[21%] 2xl:w-[20%] 2xl:mx-9 min-[1800px]:w-[16%] dark:text-white  dark:bg-DM_DarkBlue dark:shadow-LM_VeryDarkBlue'
         key={countryName}
       >
         <Link to={`/name/${countryName}`}>
