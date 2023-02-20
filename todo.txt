@@ -1,2 +1,0 @@
-- add component when nothing matches with searchBar
-- DARK MODE
