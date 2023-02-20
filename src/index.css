@@ -9,28 +9,33 @@ body {
 
 .dark input::placeholder,
 .dark .css-hfutr2-MuiSvgIcon-root-MuiSelect-icon,
-.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon {
+.dark .css-bpeome-MuiSvgIcon-root-MuiSelect-icon,
+.dark .css-1636szt {
   color: #fff;
 }
 
-.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline {
+.dark .css-1d3z3hw-MuiOutlinedInput-notchedOutline,
+.dark .css-qiwgdb.css-qiwgdb.css-qiwgdb {
   border: solid 1px hsl(209, 23%, 22%);
   box-shadow: 0px 4px 6px -1px hsl(200, 15%, 8%);
 }
 
 .dark .css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input,
-.dark .css-6hp17o-MuiList-root-MuiMenu-list {
+.dark .css-6hp17o-MuiList-root-MuiMenu-list,
+.dark .css-r8u8y9 {
   background-color: hsl(209, 23%, 22%);
   color: #fff;
 }
 .dark .css-6hp17o-MuiList-root-MuiMenu-list li:hover,
 .dark .css-6hp17o-MuiList-root-MuiMenu-list li:focus,
-.dark .css-6hp17o-MuiList-root-MuiMenu-list li:active {
+.dark .css-6hp17o-MuiList-root-MuiMenu-list li:active,
+.dark .css-1km1ehz.Mui-selected {
   background-color: hsl(207, 26%, 17%);
 }
 
 .dark
   .css-1yk1gt9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root.Mui-focused
-  .MuiOutlinedInput-notchedOutline {
+  .MuiOutlinedInput-notchedOutline,
+.dark .css-fvipm8.Mui-focused .MuiOutlinedInput-notchedOutline {
   border-color: hsl(0, 0%, 52%);
 }
