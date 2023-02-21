@@ -34,7 +34,7 @@ I also added several features by myself:
 
 - I display all the flags of neighboring countries, when you click on which one you go to the country in question
 - Display spinners and skeleton animation if data fetching has not finished
-- Error handling, 404 page, errors, or if a user enters data into the search engine that does not coincide with any country
+- Error handling, 404 page, errors, or if a user enters data into the search engine that does not coincide with any country.
 
 ### Screenshot
 
